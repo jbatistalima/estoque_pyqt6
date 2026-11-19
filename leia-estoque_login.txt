@@ -1,0 +1,35 @@
+Gerar executável no windows
+pyinstaller --noconfirm --onedir --windowed --icon=icone.ico --add-data "icone.ico;." --add-data "ui;ui;." main.py
+
+No Windows com diretório único: pyinstaller --noconfirm --onedir --windowed --icon=icone.ico ^
+--add-data="icone.ico;." ^
+--add-data="ui;ui" ^
+main.py
+
+
+No Windows com Arquivo único: pyinstaller --noconfirm --onefile --windowed ^
+--icon=icone.ico ^
+--add-data="icone.ico;." ^
+--add-data="ui;ui" ^
+main.py
+
+Gerar executável após o login:
+pyinstaller --noconfirm --onefile --windowed --icon="icone.ico" --add-data "ui;ui" --add-data "icone.ico;." --name "ControleEstoque" main.py
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Linux
+Instalar módulo venv:
+1 - sudo apt update
+2 - sudo apt install python3-venv
+
+Criar ambiente virtual: 
+3 - python3 -m venv .venv
+
+Ativar ambiente virtual:
+4- source .venv/bin/activate
+
+Criar arquivo requirements.txt:
+pip freeze > requirements.txt
+
+Instalar dependencias através do requirements.txt:
+pip install -r requirements.txt
+
